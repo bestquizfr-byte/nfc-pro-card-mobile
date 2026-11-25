@@ -17,7 +17,7 @@ test("filtre catégorie, prix et tri", async ({ page }) => {
   await expect(page.getByTestId("product-card")).toHaveCount(4);
   await page.getByTestId("cat-grip").click();
   await page.getByLabel("Plus de 50 €").check();
-  await expect(page.getByTestId("product-card")).toHaveCount(3);
+  await expect(page.getByTestId("product-card")).toHaveCount(4); // ceinture, sac, kit bandes, pack
   await page.getByLabel("Tous les prix").check();
   await page.getByTestId("shop-sort").selectOption("prix-asc");
   const prices = await page.getByTestId("product-card").evaluateAll((cards) =>

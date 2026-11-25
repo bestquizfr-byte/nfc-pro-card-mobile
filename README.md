@@ -1,5 +1,7 @@
 # Vmax 💪
 
+> 🛒 **Nouveau : FERRUM**, boutique e-commerce d'accessoires de musculation → dossier [`ferrum/`](ferrum/), rapport dans [`REPORT.md`](REPORT.md).
+
 Carnet de muscu entre potes : séries, progression, rangs (Ranked), minuteur de repos, compléments.
 C'est une **app web installable (PWA)** : pas d'App Store. On ouvre un lien, on l'ajoute à l'écran
 d'accueil, et elle se comporte comme une vraie app (plein écran, icône, marche sans réseau).
