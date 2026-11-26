@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { Providers } from "@/components/layout/providers";
+import { siteUrl } from "@/lib/stripe";
 
 const barlow = Barlow({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-barlow" });
 const barlowCondensed = Barlow_Condensed({
@@ -15,7 +16,7 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(siteUrl()),
   title: { default: "FERRUM — Accessoires de musculation & force", template: "%s | FERRUM" },
   description:
     "Ceintures à levier, sangles, genouillères 7 mm, magnésie : les accessoires de force FERRUM pour battre tes records. Livraison offerte dès 60 €.",

@@ -14,7 +14,8 @@
     "setup": "prisma db push && prisma db seed",
     "images": "node scripts/render-product-images.mjs",
     "test:e2e": "playwright test --trace off",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "vercel-build": "DATABASE_URL=file:./demo.db prisma db push --skip-generate && DATABASE_URL=file:./demo.db tsx prisma/seed.ts && prisma generate && next build"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
