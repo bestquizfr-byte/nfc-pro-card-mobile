@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-iron-950: #141518;
+  --color-iron-900: #1b1c20;
+  --color-iron-850: #212227;
+  --color-iron-800: #282a30;
+  --color-iron-700: #34363d;
+  --color-iron-600: #4a4d55;
+  --color-iron-400: #8a8d95;
+  --color-chalk: #edeae3;
+  --color-chalk-dim: #b3b0a8;
+  --color-plate-red: #e0262f;
+  --color-plate-red-dark: #b81d25;
+  --color-plate-blue: #2f5bd3;
+  --color-plate-yellow: #f2c230;
+  --color-plate-green: #2e9b5f;
+
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-barlow), system-ui, sans-serif;
+
+  --animate-marquee: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-iron-950);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-iron-950);
+  color: var(--color-chalk);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-plate-red);
+  color: var(--color-chalk);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-plate-yellow);
+  outline-offset: 2px;
+}
+
+/* Bande "disques olympiques" : signature visuelle de la marque */
+.plate-stripe {
+  background: linear-gradient(
+    90deg,
+    var(--color-plate-red) 0 20%,
+    var(--color-plate-blue) 20% 40%,
+    var(--color-plate-yellow) 40% 60%,
+    var(--color-plate-green) 60% 80%,
+    var(--color-chalk) 80% 100%
+  );
+}
+
+.display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.92;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
